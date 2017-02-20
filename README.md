@@ -1,6 +1,6 @@
 ## aframe-uploadcare-component
 
-A Uploadcare component for A-Frame.
+A [Uploadcare](https://uploadcare.com/) component for A-Frame.
 
 For [A-Frame](https://aframe.io).
 
@@ -11,21 +11,20 @@ For [A-Frame](https://aframe.io).
 | publicKey  | You uploadcare's public key |               |
 
 ### Functions
-- **upload(value, contentType)**
-- **download(fileId, callback, binary)**
-
+- `upload(value, contentType)`
+- `download(fileId, callback, binary)`
 ### Events
 - **Upload**
  - `uploadcare-upload-started`: Upload started.
  - `uploadcare-upload-completed` Upload completed succesfully:
-   - `url`: Uploadcare CDN url of the uploaded resource.
-   - `fileInfo`: Uploadcare [fileInfo  object](https://uploadcare.com/documentation/javascript_api/#file-info).
+    - `url`: Uploadcare CDN url of the uploaded resource.
+    - `fileInfo`: Uploadcare [fileInfo  object](https://uploadcare.com/documentation/javascript_api/#file-info).
  - `uploadcare-upload-error`: Something went wrong when uploading.
-   - `errorInfo`: Error info.
-   - `fileInfo`: Uploadcare [fileInfo  object](https://uploadcare.com/documentation/javascript_api/#file-info).
+    - `errorInfo`: Error info.
+    - `fileInfo`: Uploadcare [fileInfo  object](https://uploadcare.com/documentation/javascript_api/#file-info).
  - `uploadcare-upload-progress`, {progress: uploadInfo.progress, uploadInfo: uploadInfo})
-   - `progress`: Percentage of the current upload progress.
-   - `uploadInfo`: [uploadInfo object](https://uploadcare.com/documentation/javascript_api/#upload-info)
+    - `progress`: Percentage of the current upload progress.
+    - `uploadInfo`: [uploadInfo object](https://uploadcare.com/documentation/javascript_api/#upload-info)
 
 ### Installation
 
@@ -72,16 +71,16 @@ require('aframe');
 require('aframe-uploadcare-component');
 ```
 
-### Example
+### Examples
 #### Upload a JSON
-```
+```javascript
   var sceneEl = document.querySelector('a-scene');
   sceneEl.addEventListener('uploadcare-upload-completed', function (url) { alert('Uploaded: ' + url);});
   sceneEl.upload(jsonObject, 'application/json');
 ```
 
 #### Download a JSON
-```
+```javascript
   var sceneEl = document.querySelector('a-scene');
   sceneEl.download(url, function (data) {
     console.log('Loaded data', data);
