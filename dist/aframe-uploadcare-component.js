@@ -74,7 +74,7 @@
 
 	  init: function () {
 	    window.UPLOADCARE_PUBLIC_KEY = this.data.publicKey;
-	    injectJS('https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js');
+	    injectJS('https://ucarecdn.com/libs/widget/2.x/uploadcare.full.min.js');
 	  },
 
 	  upload: function (value, contentType) {
