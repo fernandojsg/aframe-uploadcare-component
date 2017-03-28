@@ -2,6 +2,8 @@
 
 A [Uploadcare](https://uploadcare.com/) component for A-Frame.
 
+![uploadcare logo](https://raw.githubusercontent.com/fernandojsg/aframe-uploadcare-component/master/uploadcare-logo.png)
+
 For [A-Frame](https://aframe.io).
 
 ### API
