@@ -74,7 +74,7 @@ AFRAME.registerSystem('uploadcare', {
     loader.load(url, function (buffer) {
       var data = binary === true ? {content: buffer, isBinary: true} : {content: JSON.parse(buffer), isBinary: false};
       if (callback) { callback(data); }
-      sceneEl.emit('uploadcare-download-completed', data);
+      sceneEl.emit('downloadcompleted', data);
     });
   }
 });
