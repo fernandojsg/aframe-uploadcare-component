@@ -45,17 +45,17 @@ AFRAME.registerSystem('uploadcare', {
     var sceneEl = this.sceneEl;
     var self = this;
 
-    sceneEl.emit('uploadcare-upload-started');
+    sceneEl.emit('uploadstart');
 
     file.done(function (fileInfo) {
       if (self.data.debug) { console.info('Uploaded link:', fileInfo); }
-      sceneEl.emit('uploadcare-upload-completed', {url: fileInfo.cdnUrl, fileInfo: fileInfo});
+      sceneEl.emit('uploadcomplete', {url: fileInfo.cdnUrl, fileInfo: fileInfo});
     }).fail(function (errorInfo, fileInfo) {
       if (self.data.debug) { console.error('Uploaded fail:', errorInfo, fileInfo); }
-      sceneEl.emit('uploadcare-upload-error', {errorInfo: errorInfo, fileInfo: fileInfo});
+      sceneEl.emit('uploaderror', {errorInfo: errorInfo, fileInfo: fileInfo});
     }).progress(function (uploadInfo) {
       if (self.data.debug) { console.info('Upload progress:', uploadInfo); }
-      sceneEl.emit('uploadcare-upload-progress', {progress: uploadInfo.progress, uploadInfo: uploadInfo});
+      sceneEl.emit('uploadprogress', {progress: uploadInfo.progress, uploadInfo: uploadInfo});
     });
   },
 
